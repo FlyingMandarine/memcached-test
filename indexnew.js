@@ -16,14 +16,13 @@ client.set('key', 'data', (err, r) => {
     console.log('err is', err);
     console.log('r is', r);
     console.log('Data inserted');
-    client.shutdown();
 });
 
-// client.get('key', (err, data) => {
-//     console.log('Data obtained!');
-//     console.log('err is', err);
-//     console.log('data is', data);
-// });
+client.get('key', (err, data) => {
+    console.log('Data obtained!');
+    console.log('err is', err);
+    console.log('data is', data);
+});
 
 console.log('Done.');
 
@@ -32,3 +31,4 @@ client.on('error', (err) => {
     client.shutdown();
 });
 
+client.shutdown();
