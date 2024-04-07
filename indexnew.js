@@ -16,6 +16,7 @@ client.set('key', 'data', (err, r) => {
     console.log('err is', err);
     console.log('r is', r);
     console.log('Data inserted');
+    client.shutdown();
 });
 
 // client.get('key', (err, data) => {
@@ -31,4 +32,3 @@ client.on('error', (err) => {
     client.shutdown();
 });
 
-// client.shutdown();
