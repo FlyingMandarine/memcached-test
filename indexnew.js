@@ -30,5 +30,3 @@ client.on('error', (err) => {
     console.error('Memcache client error:', err);
     client.shutdown();
 });
-
-client.shutdown();
