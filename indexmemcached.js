@@ -6,6 +6,10 @@ var memcached = new Memcached(server);
 
 console.log('starting set');
 
-memcached.set('foo', 'bar', 10, function (err) { console.log('err is', err) });
+memcached.touch('key', 10, function (err) { 'touch', err });
+memcached.set('foo', 'bar', 10, function (err) { console.log('set', err) });
+memcached.get('foo', function (err, data) {
+    console.log('get', data);
+});
 
 console.log('set end');
